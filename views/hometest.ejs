@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Home page</title>
+<script id="scripts" type="text/javascript" src="/scripts.js?c297ffc94dc8b1cc0bf99a59b92ce1f9f01f5208"></script>
+
+<meta name="referrer" content="same-origin" />
+
+			<link rel="icon" sizes="16x16" type="image/png" href="assets/favicon_16.png" />
+			<link rel="icon" sizes="32x32" type="image/png" href="assets/favicon_32.png" />
+				<link rel="icon" sizes="any" type="image/svg+xml" href="assets/favicon.svg" />
+<title>eSparkBiz - Rocket.Chat</title><meta name="application-name" content="eSparkBiz - Rocket.Chat"><meta name="apple-mobile-web-app-title" content="eSparkBiz - Rocket.Chat">
+<meta http-equiv="content-language" content=""><meta name="language" content="">
+<meta name="robots" content="INDEX,FOLLOW">
+<meta name="msvalidate.01" content="">
+<meta name="google-site-verification" content="">
+<meta property="fb:app_id" content="">
+
+<base href="/">
+
+</head>
+
+<body>
+
+    <div class="container_main">
+
+    
+        <div class="home_row">
+
+        <div class="home_tab1">
+
+            <section>
+                <div class="col_nav">
+                    <div>
+                        <i class="fa-brands fa-twitter fa-3x"></i>
+                        <div class="sidebarOption active">
+                            <span class="nav-icons"><i class="fa-solid fa-house-user"></i></span>
+                            <div>
+                              <a class="sidebardata" href="/login/login/index5"> <h2>home</h2></a>
+                            </div>
+
+                           
+                        </div>
+                        
+                        <div class="sidebarOption">
+                            <span class="nav-icons"><i class="fa-solid fa-user"></i></span>
+                          <div>
+                            <a class="sidebardata" href="/prof/prof"> <h2>Profile</h2></a>
+                          </div> 
+                        </div>
+
+                        <div class="tweet_tag">
+                            <a href="/tweet/tweet_add" class="tweet_p">Tweet</a>
+                        </div>
+                        <h1>Welcome <%=data2 %></h1>
+                        <a href="/logout/logout"><h2>Logout</h2></a>
+                    </div>
+                <!-- </div> -->
+            </section>
+
+
+         </div>
+        
+         <div class="home_tab2">
+            <section>
+                <div class="container">
+                    <%
+                        const array_of_allowed_files = ['png', 'jpeg', 'jpg'];
+                        const array_of_allowed_videos = ['mp4','gif'];
+                    %>
+                    <% for(var i=0;i<data.length;i++) { %>
+                      
+                            <div class="tweet">
+                                    <div class="test_col_row">
+                                        <div class="text_col1">
+                                            <div class="img1"><img src="/files/profile-img.png"></div>
+                                        </div>
+                                        <div class="text_col2">
+                                            <a href="">Jaquon Hart</a>
+                                            <p class="skill"><%=data[i].description%></p>
+                                            <%  const file_extension = data[i].media_url.slice(((data[i].media_url.lastIndexOf('.') - 1) >>> 0) + 2);
+                                                if (array_of_allowed_files.includes(file_extension)) {
+                                            %>
+                                            <img id="tweet_img" src="<%=data[i].media_url%>" />
+                                            <% }else{ %>
+                                                <video width="320" height="240" controls>
+                                                    <source src="<%=data[i].media_url%>" type="video/mp4">
+                                                </video>
+                                            <% }%>
+                                            <div class="icon">
+                                                <div class="insta">
+                                                    <div class="icon_row">
+                                                        <a href=""><i class="fa fa-thumbs-up"></i></a>
+                                                        <p>10</p>
+                                                      <div class="icon_row">
+                                                        <div class="icon_col">
+                                                            <a href=""><i class="fas fa-comment"></i></a>
+                                                            <p>10</p>
+                                                        </div>
+                                                        
+                                                      <div class="icon_row">
+                                                        <div class="icon_col">
+                                                            <a href=""><i class="fa fa-retweet"></i></a>
+                                                      <p>10</p>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                   
+                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                      
+                            </div>
+                        </div>
+                        </div>
+                        
+                   <% } %>
+                
+                </div>
+            </section>
+            </div>
+       
+            <div class="home_tab3">
+            <section>
+                <div class="col_search">
+                    <!-- <div class="widgets__input">
+                          <span class="material-icons widgets__searchIcon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                          <input type="search" placeholder="Search" class="widgets__input" />
+                        </div> -->
+                    <!-- <div class="widgets__input1">
+                            <form action="/action_page.php">
+                              <input type="text" placeholder="Search.." name="search">
+                              <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div> -->
+                    <div class="widgets">
+                        <div class="widgets__input">
+                            <span class="material-icons widgets__searchIcon">
+                                <i class="fa-solid fa-magnifying-glass"></i></span>
+                            <input type="text" placeholder="Search" />
+                        </div>
+                    </div>
+            </section>
+
+          </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+Footer

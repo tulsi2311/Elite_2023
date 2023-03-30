@@ -24,7 +24,7 @@ const login = asyncHandler(async (req, res) => {
       var token_id = jwt.verify(id, 'id');
       console.log(token)
       //var image = `select heading,description,media_url from user_tweets where u_id='${token}'`;
-      var sql=await query(`select heading,description,media_url from user_tweets where u_id='${token_id}'`)
+      var sql=await query(`select heading,description,media_url from user_tweets where   u_id='${token_id}'`)
       if(sql){
          res.render('home.ejs', { data:sql,data2:token });
       }else{
@@ -40,7 +40,7 @@ const login = asyncHandler(async (req, res) => {
 const kakaLogin = asyncHandler(async (req, res) => {
 
    console.log(req.body);
-   var sql = `select * from Elite_User where email='${req.body.email}'`;
+   var sql = `select * from Elite_User where is_delete=0 and email='${req.body.email}'`;
    conn.query(sql, (err, data) => {
       if (err) throw err;
 
@@ -104,7 +104,7 @@ const login2 = asyncHandler(async (req, res) => {
       var token_id = jwt.verify(id, 'id');
       console.log(token)
       //var image = `select heading,description,media_url from user_tweets where u_id='${token}'`;
-      var sql=await query(`select heading,description,media_url from user_tweets where u_id='${token_id}'`)
+      var sql=await query(`select heading,description,media_url from user_tweets where  u_id='${token_id}'`)
       if(sql){
          res.render('home.ejs', { data:sql,data2:token });
       }else{

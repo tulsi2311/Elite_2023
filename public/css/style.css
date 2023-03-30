@@ -13,6 +13,9 @@
     
     
     }
+    .sidebardata{
+        text-decoration: none;
+    }
     .signpage{
     
     background-color: #FFFFFF;
@@ -22,6 +25,10 @@
     
     width: 500px;
     padding-bottom: 20px;
+    }
+    .bottom-stick{
+        position: sticky;
+        bottom: 0;
     }
     .textdata{
     text-align: center;
